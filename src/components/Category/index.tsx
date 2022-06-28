@@ -1,7 +1,7 @@
 import React from 'react'
 import { Anchor, Image } from './styles'
 
-const DEFAULT_IMAGE = 'https://i.imgur.com/dJa0Hpl.jpg'
+export const DEFAULT_IMAGE: string = 'https://i.imgur.com/dJa0Hpl.jpg'
 
 const Category = ({
   cover = DEFAULT_IMAGE,
@@ -16,4 +16,4 @@ const Category = ({
   )
 }
 
-export default Category
+export { Category }
