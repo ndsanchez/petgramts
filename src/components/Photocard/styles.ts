@@ -7,6 +7,7 @@ const ImgWrapper = styled.div`
   height: 0;
   overflow: hidden;
   width: 100%;
+  margin-top: 15px;
 `
 
 const Img = styled.img`
