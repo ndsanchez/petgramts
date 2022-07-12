@@ -1,26 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import { useCategoriesData } from '../../Hooks/useCategoriesData'
 import { Category } from '../Category'
 import { Item, List } from './styles'
-
-const useCategoriesData = () => {
-  const [categories, setCategories] = useState<any>([])
-  const [loading, setLoading] = useState<boolean>(false)
-
-  useEffect(() => {
-    setLoading((prev) => !prev)
-    window
-      .fetch(
-        'https://petgram-server-alexander.mralexsaavedra.vercel.app/categories'
-      )
-      .then((res) => res.json())
-      .then((response) => {
-        setCategories(response)
-        setLoading((prev) => !prev)
-      })
-  }, [])
-
-  return { categories, loading }
-}
 
 const ListOfCategories = (): JSX.Element => {
   const [showFixed, setShowFixed] = useState<boolean>(false)

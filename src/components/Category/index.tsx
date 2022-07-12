@@ -1,6 +1,6 @@
 import React from 'react'
 import { Skeleton } from '../Skeleton'
-import { Anchor, Image } from './styles'
+import { Anchor, Image, SkeletonWrapper } from './styles'
 
 export const DEFAULT_IMAGE: string = 'https://i.imgur.com/dJa0Hpl.jpg'
 
@@ -17,16 +17,9 @@ const Category = ({
         <Image src={cover} alt='pet' />
       )}
       {emoji === '?' ? (
-        <div
-          style={{
-            width: 20,
-            margin: '0 auto',
-            marginBottom: 10,
-            marginTop: 5,
-          }}
-        >
+        <SkeletonWrapper>
           <Skeleton rounded />
-        </div>
+        </SkeletonWrapper>
       ) : (
         <span>{emoji}</span>
       )}

@@ -18,3 +18,10 @@ export const Image = styled.img`
   overflow: hidden;
   object-fit: cover;
 `
+
+export const SkeletonWrapper = styled.div`
+  width: 20px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  margin-top: 5px;
+`
