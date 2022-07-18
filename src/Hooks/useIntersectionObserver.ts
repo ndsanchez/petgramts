@@ -9,13 +9,19 @@ export const useIntersectionObserver = () => {
       const { isIntersecting } = entry[0]
       if (isIntersecting) {
         setShow(true)
-        observer.unobserve(entry)
+        observer.disconnect()
       }
     }
 
-    const observer = new window.IntersectionObserver(callback)
-
-    observer.observe(ref.current)
+    Promise.resolve(
+      typeof window.IntersectionObserver !== 'undefined'
+        ? window.IntersectionObserver
+        : //@ts-ignore
+          import('intersection-observer')
+    ).then(() => {
+      const observer = new window.IntersectionObserver(callback)
+      observer.observe(ref.current)
+    })
   }, [ref])
 
   return { show, ref }
