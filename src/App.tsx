@@ -5,24 +5,25 @@ import { GlobalStyle } from './GlobalStyle'
 import { Photocard } from './components/Photocard'
 import { ListOfPhotocards } from './components/ListOfPhotocards'
 import { Logo } from './components/Logo'
+import { PhotocardContainer } from './containers/PhotocardContainer'
 
 const App = (): JSX.Element => {
-  const [btnText, setBtnText] = useState('Say hello!')
+  const urlParams = new URLSearchParams(window.location.search)
+  const detailId = urlParams.get('detail')
+
   return (
     <>
       <GlobalStyle />
-      {/* <h1 id='gretting'>Welcome Neil!</h1> */}
       <Logo />
-      <ListOfCategories />
-      <ListOfPhotocards />
-      {/* <Button
-        onClick={() => {
-          setBtnText('Said hello!')
-        }}
-        variant='outlined'
-      >
-        {btnText}
-      </Button> */}
+
+      {detailId ? (
+        <PhotocardContainer detailId={detailId} />
+      ) : (
+        <>
+          <ListOfCategories />
+          <ListOfPhotocards categoryId={3} />
+        </>
+      )}
     </>
   )
 }
