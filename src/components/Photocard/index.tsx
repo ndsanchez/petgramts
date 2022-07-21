@@ -1,26 +1,18 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { SetStateAction, useEffect, useRef, useState } from 'react'
 import { Img, ImgWrapper, Button, BtnWrapper, Text } from './styles'
 import { MdFavoriteBorder, MdFavorite } from 'react-icons/md'
 import { useIntersectionObserver } from '../../Hooks/useIntersectionObserver'
 import { useLocalStorage } from '../../Hooks/useLocalStorage'
+import { useClickWithTimer } from '../../Hooks/useClickWithTimer'
 
 export const DEFAULT_IMAGE =
   'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
 
 const Photocard = ({ src = DEFAULT_IMAGE, likes = 0, id = 0 }) => {
   const key = `like-${id}`
-  const [clicked, setClicked] = useState<boolean>(false)
+  const [clicked, setClicked] = useClickWithTimer(300, false)
   const [liked, setLiked] = useLocalStorage(key, false)
-
   const { show, ref } = useIntersectionObserver()
-
-  useEffect(() => {
-    if (true) {
-      setTimeout(() => {
-        setClicked(false)
-      }, 300)
-    }
-  }, [clicked])
 
   return (
     <>
