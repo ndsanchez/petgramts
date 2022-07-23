@@ -1,11 +1,6 @@
 import * as ReactDOM from 'react-dom'
 import App from './App'
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  gql,
-} from '@apollo/client'
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
 
 const client = new ApolloClient({
   uri: 'https://petgram-server-alexander.vercel.app/graphql',
