@@ -17,6 +17,10 @@ module.exports = {
     extensions: ['.js', '.ts', '.tsx']
   },
   output: {
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: '/',
+  },
+  devServer: {
+    historyApiFallback: true,
   }
 }

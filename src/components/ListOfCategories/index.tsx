@@ -33,7 +33,7 @@ const ListOfCategories = (): JSX.Element => {
         <>
           {categories.map((category: any) => (
             <Item key={category.id}>
-              <Category {...category} />
+              <Category {...category} path={`/pet/${category.id}`} />
             </Item>
           ))}
         </>
