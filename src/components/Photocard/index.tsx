@@ -38,10 +38,6 @@ const Photocard = ({
     setILiked(!iLiked)
   }, [likePhoto, iLiked])
 
-  useEffect(() => {
-    console.log('liked: ', data)
-  }, [data])
-
   return (
     <>
       <ImgWrapper ref={ref}>
