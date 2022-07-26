@@ -16,6 +16,11 @@ for running the dev server
 $ npm run dev
 ```
 
+for running the tests
+```
+$ npm run test
+```
+
 for building the app
 ```
 $ npm run build
