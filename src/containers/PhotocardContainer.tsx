@@ -15,13 +15,9 @@ const GET_DETAIL = gql`
   }
 `
 
-interface IProps {
-  detailId: string
-}
-
-export const PhotocardContainer = ({ detailId }: IProps) => {
+export const PhotocardContainer = ({ id }: any) => {
   const { loading, error, data } = useQuery(GET_DETAIL, {
-    variables: { id: detailId },
+    variables: { id },
   })
 
   if (loading) {

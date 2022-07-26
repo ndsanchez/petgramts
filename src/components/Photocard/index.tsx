@@ -42,7 +42,7 @@ const Photocard = ({
     <>
       <ImgWrapper ref={ref}>
         {show && (
-          <a href={`/?detail=${id}`}>
+          <a href={`/detail/${id}`}>
             <Img src={src} alt='photocard' />
           </a>
         )}

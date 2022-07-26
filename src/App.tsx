@@ -16,14 +16,11 @@ const App = (): JSX.Element => {
       <GlobalStyle />
       <Logo />
 
-      {detailId ? (
-        <PhotocardContainer detailId={detailId} />
-      ) : (
-        <Router>
-          <Home path='/' />
-          <Home path='/pet/:id' />
-        </Router>
-      )}
+      <Router>
+        <Home path='/' />
+        <Home path='/pet/:id' />
+        <PhotocardContainer path='/detail/:id' />
+      </Router>
     </>
   )
 }
