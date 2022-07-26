@@ -4,14 +4,10 @@ import { Link, Image, SkeletonWrapper } from './styles'
 
 export const DEFAULT_IMAGE: string = 'https://i.imgur.com/dJa0Hpl.jpg'
 
-const Category = ({
-  cover = DEFAULT_IMAGE,
-  emoji = '?',
-  path = '',
-}: any): JSX.Element => {
+const Category = ({ cover, emoji = '?', path = '' }: any): JSX.Element => {
   return (
     <Link to={path}>
-      {cover === DEFAULT_IMAGE ? (
+      {typeof cover === 'undefined' ? (
         <Skeleton height={75} rounded />
       ) : (
         <Image src={cover} alt='pet' />
